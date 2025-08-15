@@ -688,6 +688,13 @@ header {
     color: #fff;
 }
 
+#about-slider img {
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
 
 /*------------------------------------*\
 	Portfolio
@@ -813,6 +820,10 @@ header {
     padding: 40px 20px 40px 70px;
     margin: 15px 0px;
     border: 1px solid #EEE;
+    min-height: 340px; /* ajustează după preferință */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .service i {
