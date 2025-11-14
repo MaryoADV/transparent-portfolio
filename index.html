@@ -345,60 +345,47 @@ Personalizăm totul</p>
 
 	<div id="numbers" class="section sm-padding">
 
-		<!-- Container -->
-		<div class="container">
+        <!-- Container -->
+        <div class="container">
 
-			<!-- Row -->
-			<div class="row">
+            <!-- Row -->
+            <div class="row">
 
-				<!-- number -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-users"></i>
-						<h3 class="white-text"><span class="counter">13</span></h3>
-						<span class="white-text">Happy clients</span>
-					</div>
-				</div>
-				<!-- /number -->
+                <!-- number -->
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number">
+                        <i class="fa fa-users"></i>
+                        <h3 class="white-text"><span class="counter">13</span></h3>
+                        <span class="white-text">Happy clients</span>
+                    </div>
+                </div>
+                <!-- /number -->
 
-				<!-- number -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-trophy"></i>
-						<h3 class="white-text"><span class="counter">1</span></h3>
-						<span class="white-text">Awards won</span>
-					</div>
-				</div>
-				<!-- /number -->
+                <!-- number -->
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number">
+                        <i class="fa fa-coffee"></i>
+                        <h3 class="white-text"><span class="counter">1000</span></h3>
+                        <span class="white-text">Cups of Coffee</span>
+                    </div>
+                </div>
+                <!-- /number -->
 
-				<!-- number -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-coffee"></i>
-						<h3 class="white-text"><span class="counter">69</span>K</h3>
-						<span class="white-text">Cups of Coffee</span>
-					</div>
-				</div>
-				<!-- /number -->
+                <!-- number -->
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number">
+                        <i class="fa fa-file"></i>
+                        <h3 class="white-text"><span class="counter">15</span></h3>
+                        <span class="white-text">Projects completed</span>
+                    </div>
+                </div>
+                <!-- /number -->
 
-				<!-- number -->
-				<div class="col-sm-3 col-xs-6">
-					<div class="number">
-						<i class="fa fa-file"></i>
-						<h3 class="white-text"><span class="counter">15</span></h3>
-						<span class="white-text">Projects completed</span>
-					</div>
-				</div>
-				<!-- /number -->
+        </div>
+        <!-- /Container -->
 
-			</div>
-			<!-- /Row -->
-
-		</div>
-		<!-- /Container -->
-
-	</div>
-	<!-- /Numbers -->
+    </div>
+    <!-- /Numbers -->
 
 	<!-- Pricing -->
 	<section id="pricing" class="section md-padding pricing-section">
@@ -454,6 +441,44 @@ Personalizăm totul</p>
   </div>
 </section>
 	<!-- /Pricing -->
+
+	<!-- Call-to-Action sub pricing -->
+<div class="pricing-cta">
+  <h3>Nu ești sigur care plan e pentru tine?</h3>
+  <p>Contactează echipa noastră și te ajutăm să alegi soluția perfectă.</p>
+  <button class="cta btn-ripple">Cere o consultație gratuită</button>
+</div>
+
+<!-- Features comparison -->
+<div class="pricing-features">
+  <h3>Ce includem în fiecare plan</h3>
+  <div class="features-grid">
+    <div class="feature-item">
+      <h4><i class="fa fa-check-circle"></i>Design complet</h4>
+      <p>Magazin personalizat cu design modern și responsive pe toate deviceurile.</p>
+    </div>
+    <div class="feature-item">
+      <h4><i class="fa fa-check-circle"></i>Integrări Shopify</h4>
+      <p>Integrări complete cu plăți, analitică și marketplace-uri externe.</p>
+    </div>
+    <div class="feature-item">
+      <h4><i class="fa fa-check-circle"></i>Suport 24/7(PRO)</h4>
+      <p>Echipa de suport disponibilă pentru orice întrebări și probleme.</p>
+    </div>
+    <div class="feature-item">
+      <h4><i class="fa fa-check-circle"></i>SEO optimizat(PRO)</h4>
+      <p>Magazinul tău rankează pe Google din primele zile cu strategia noastră.</p>
+    </div>
+    <div class="feature-item">
+      <h4><i class="fa fa-check-circle"></i>Email marketing</i></h4>
+      <p>Campanii automate pentru retenție clienți și vânzări repetate.</p>
+    </div>
+    <div class="feature-item">
+      <h4><i class="fa fa-check-circle"></i>Analytics avansat(PRO)</h4>
+      <p>Dashboard cu metricile importante și rapoarte lunare personalizate.</p>
+    </div>
+  </div>
+</div>
 
 
 	<!-- Testimonial -->
@@ -826,7 +851,7 @@ Personalizăm totul</p>
 document.querySelectorAll('.work').forEach(card=>{
   card.addEventListener('click', function(e){
     // allow clicks on links/icons to work normally
-    if (e.target.closest('a')) return;
+    if (e.target.closest('a')) return
     // toggle open on touch; close others optionally
     document.querySelectorAll('.work.open').forEach(w=>{ if (w!==this) w.classList.remove('open'); });
     this.classList.toggle('open');
