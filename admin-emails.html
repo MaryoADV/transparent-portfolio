@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Emails</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: #6195ff;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #4173d8;
+        }
+        .btn-danger {
+            background: #ff4757;
+            color: white;
+        }
+        .btn-danger:hover {
+            background: #ff3838;
+        }
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #6195ff 0%, #4173d8 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #ddd;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background: #f9f9f9;
+        }
+        .email-cell {
+            color: #6195ff;
+            word-break: break-all;
+        }
+        .date-cell {
+            color: #999;
+            font-size: 13px;
+        }
+        .no-data {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+        .message {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .message.show {
+            display: block;
+        }
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Email Manager Admin</h1>
+        <p class="subtitle">Gestionează emailurile colectate din formularul Paștele</p>
+
+        <div id="message" class="message"></div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number" id="totalEmails">0</div>
+                <div class="stat-label">Total Emailuri</div>
+            </div>
+            <div class="stat-box" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
+                <div class="stat-number" id="totalSubscribers">0</div>
+                <div class="stat-label">Subscribers Unici</div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn-primary" onclick="reloadEmails()">🔄 Reîncarcă</button>
+            <button class="btn-secondary" onclick="downloadCSV()">📥 Download CSV</button>
+            <button class="btn-danger" onclick="clearAllEmails()">🗑️ Șterge Toate</button>
+        </div>
+
+        <div id="emailsContainer"></div>
+    </div>
+
+    <script>
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = 'message show ' + type;
+            setTimeout(() => msg.classList.remove('show'), 3000);
+        }
+
+        function loadEmails() {
+            fetch('./emails.json')
+                .then(r => r.json())
+                .then(emails => {
+                    document.getElementById('totalEmails').textContent = emails.length;
+                    document.getElementById('totalSubscribers').textContent = new Set(emails.map(e => e.email)).size;
+                    renderEmails(emails);
+                })
+                .catch(err => {
+                    console.error(err);
+                    showMessage('Eroare à încărcarea emailurilor', 'error');
+                    document.getElementById('emailsContainer').innerHTML = '<div class="no-data">⚠️ Fișierul emails.json nu a putut fi încărcat</div>';
+                });
+        }
+
+        function renderEmails(emails) {
+            const container = document.getElementById('emailsContainer');
+            if (emails.length === 0) {
+                container.innerHTML = '<div class="no-data">📭 Niciun email salvat încă</div>';
+                return;
+            }
+
+            let html = '<table><thead><tr><th>#</th><th>Email</th><th>Data Adăugării</th><th>Reward</th><th>Acțiuni</th></tr></thead><tbody>';
+            emails.forEach((e, i) => {
+                const date = new Date(e.created_at).toLocaleString('ro-RO');
+                html += `<tr>
+                    <td>${e.id}</td>
+                    <td class="email-cell">${e.email}</td>
+                    <td class="date-cell">${date}</td>
+                    <td>${e.reward || '-'}</td>
+                    <td><button class="btn-secondary" onclick="deleteEmail(${e.id})" style="padding: 6px 12px; font-size: 12px;">Șterge</button></td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+
+        function reloadEmails() {
+            loadEmails();
+            showMessage('✅ Emailuri reîncărcate', 'success');
+        }
+
+        function downloadCSV() {
+            fetch('./emails.json')
+                .then(r => r.json())
+                .then(emails => {
+                    let csv = 'ID,Email,Data,Reward\n';
+                    emails.forEach(e => {
+                        csv += `${e.id},"${e.email}","${e.created_at}","${e.reward || ''}"}\n`;
+                    });
+                    const blob = new Blob([csv], {type: 'text/csv'});
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'emails_' + new Date().toISOString().slice(0,10) + '.csv';
+                    a.click();
+                    showMessage('✅ CSV descărcat', 'success');
+                });
+        }
+
+        function deleteEmail(id) {
+            if (!confirm('Ești sigur?')) return;
+            fetch('./emails.json')
+                .then(r => r.json())
+                .then(emails => {
+                    const updated = emails.filter(e => e.id !== id);
+                    // Apel PHP pentru a șterge
+                    fetch('./delete-email.php', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({id: id})
+                    })
+                    .then(() => {
+                        loadEmails();
+                        showMessage('✅ Email șters', 'success');
+                    });
+                });
+        }
+
+        function clearAllEmails() {
+            if (!confirm('Ești FOARTE sigur? Asta va șterge TOATE emailurile!!!')) return;
+            fetch('./clear-emails.php', {method: 'POST'})
+                .then(() => {
+                    loadEmails();
+                    showMessage('✅ Toate emailurile șterse', 'success');
+                });
+        }
+
+        // Load on page load
+        loadEmails();
+    </script>
+</body>
+</html>
