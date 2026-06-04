@@ -1,256 +1,456 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact - Raised.ro | Cere Ofertă Gratuită pentru Website</title>
+	<meta name="description" content="Contactează Raised.ro pentru o ofertă gratuită. Specialiști în design web, Shopify și aplicații personalizate. Răspund în 24 de ore.">
 
-	<title>Contact – Raised.ro | Agenție Web Development</title>
-	<meta name="description" content="Contactează Raised.ro pentru o consultație gratuită. Suntem disponibili la +40 771 324 731 sau prin email. Te așteptăm!">
-	<link rel="canonical" href="https://raised.ro/contact/">
-	<link rel="icon" type="image/png" href="img/logo.png">
+	<!-- Tailwind CSS CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
 
-	<!-- Open Graph Tags -->
-	<meta property="og:title" content="Contact – Raised.ro">
-	<meta property="og:description" content="Contactează Raised.ro. Consultație gratuită pentru magazinul online tău.">
-	<meta property="og:image" content="https://raised.ro/img/logo.png">
-	<meta property="og:url" content="https://raised.ro/contact/">
-	<meta property="og:type" content="website">
+	<!-- Inter Font -->
+	<link rel="preconnect" href="https://rsms.me/">
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+	<style>
+		* { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+		
+		body {
+			background-color: #0f172a;
+			color: #e2e8f0;
+			scroll-behavior: smooth;
+		}
 
-	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+		header {
+			background-color: rgba(15, 23, 42, 0.95);
+			backdrop-filter: blur(10px);
+		}
 
-	<!-- Owl Carousel -->
-	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
-	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
 
-	<!-- Magnific Popup -->
-	<link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+		.fade-in-up {
+			animation: fadeInUp 0.6s ease-out forwards;
+		}
 
-	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+		.scroll-fade {
+			opacity: 0;
+			transform: translateY(20px);
+			transition: all 0.6s ease-out;
+		}
 
-	<!-- Custom stylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+		.scroll-fade.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 
-	<!-- Schema.org Structured Data -->
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "LocalBusiness",
-	  "name": "Raised.ro",
-	  "description": "Agenție Web Development România",
-	  "url": "https://raised.ro",
-	  "telephone": "+40771324731",
-	  "email": "agency@raised.ro",
-	  "address": {
-	    "@type": "PostalAddress",
-	    "addressCountry": "RO",
-	    "addressLocality": "Timisoara"
-	  },
-	  "contactPoint": {
-	    "@type": "ContactPoint",
-	    "contactType": "Customer Service",
-	    "telephone": "+40771324731",
-	    "email": "agency@raised.ro"
-	  }
-	}
-	</script>
+		input, textarea {
+			background-color: rgba(30, 41, 59, 0.5);
+			border-color: rgba(100, 116, 139, 0.5);
+		}
+
+		input:focus, textarea:focus {
+			background-color: rgba(30, 41, 59, 0.8);
+			border-color: rgb(99, 102, 241);
+			outline: none;
+		}
+	</style>
 </head>
 
-<body>
-	<!-- Background Image Global -->
-	<div class="bg-img" style="background-image: url('./img/background1.jpg'); position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -2;">
-		<div class="overlay"></div>
-	</div>
-
-	<!-- Header -->
-	<header id="home">
-		<!-- Nav -->
-		<nav id="nav" class="navbar nav-transparent">
-			<div class="container">
-				<div class="navbar-header">
-					<!-- Logo -->
-					<div class="navbar-brand">
-						<a href="/">
-							<img class="logo" src="img/logo.png" alt="logo">
-							<img class="logo-alt" src="img/logo-alt.png" alt="logo">
-						</a>
-					</div>
-					<!-- /Logo -->
-
-					<!-- Collapse nav button -->
-					<div class="nav-collapse">
-						<span></span>
-					</div>
-					<!-- /Collapse nav button -->
+<body class="overflow-x-hidden">
+	<!-- Header/Navigation -->
+	<header class="sticky top-0 z-50 w-full">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+			<!-- Logo -->
+			<a href="./index.html" class="flex items-center gap-2">
+				<div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
+					<span class="text-white font-bold text-lg">R</span>
 				</div>
+				<span class="text-xl font-bold text-white">Raised</span>
+			</a>
 
-				<!--  Main navigation  -->
-				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="/">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="portfolio.html">Portfolio</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="pricing.html">Pricing</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-				<!-- /Main navigation -->
-			</div>
-		</nav>
-		<!-- /Nav -->
+			<!-- Desktop Navigation -->
+			<nav class="hidden lg:flex items-center gap-8">
+				<a href="./index.html" class="text-slate-300 hover:text-white transition">Acasă</a>
+				<a href="./index.html#services" class="text-slate-300 hover:text-white transition">Servicii</a>
+				<a href="./portfolio.html" class="text-slate-300 hover:text-white transition">Portofoliu</a>
+				<a href="./contact.html" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Cere Ofertă</a>
+			</nav>
 
-		<!-- Page header wrapper -->
-		<div class="home-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="home-content">
-							<h1 class="white-text">Contact</h1>
-							<p class="white-text">Suntem aici pentru tine. Contactează-ne pentru o consultație gratuită.</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			<!-- Mobile Menu Button -->
+			<button id="mobile-menu-button" class="lg:hidden flex flex-col gap-1.5 w-6 h-6 p-0 bg-transparent border-0 cursor-pointer">
+				<span class="block w-full h-0.5 bg-white rounded transition"></span>
+				<span class="block w-full h-0.5 bg-white rounded transition"></span>
+				<span class="block w-full h-0.5 bg-white rounded transition"></span>
+			</button>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800">
+			<nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
+				<a href="./index.html" class="text-slate-300 hover:text-white transition py-2">Acasă</a>
+				<a href="./index.html#services" class="text-slate-300 hover:text-white transition py-2">Servicii</a>
+				<a href="./portfolio.html" class="text-slate-300 hover:text-white transition py-2">Portofoliu</a>
+				<a href="./contact.html" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition inline-block">Cere Ofertă</a>
+			</nav>
 		</div>
 	</header>
-	<!-- /Header -->
+
+	<!-- Hero Section -->
+	<section class="pt-32 pb-16 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
+		<div class="max-w-4xl mx-auto text-center">
+			<div class="fade-in-up">
+				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+				Să Lucrăm <span class="bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">Mpreună</span>
+			</h1>
+			<p class="text-xl text-slate-400">
+				Hai să discutam despre proiectul tău. Răspund personal la fiecare mesaj și ofer consultație gratuită.
+				</p>
+			</div>
+		</div>
+	</section>
 
 	<!-- Contact Section -->
-	<div id="contact" class="section md-padding">
-		<div class="container">
-			<div class="row">
-				<div class="section-header text-center">
-					<h2 class="title">Pune-ne o Întrebare</h2>
-					<p class="sub-title">Contactează-ne și răspundem în 24 de ore</p>
+	<section class="py-24 px-4">
+		<div class="max-w-6xl mx-auto">
+			<div class="grid md:grid-cols-2 gap-16">
+				<!-- Contact Form -->
+				<div class="scroll-fade">
+					<h2 class="text-3xl font-bold text-white mb-8">Trimite un Mesaj</h2>
+					<form id="contact-form" class="space-y-6">
+						<div>
+					<label class="block text-sm font-semibold text-white mb-2">Numele tău</label>
+						<input 
+							type="text" 
+							id="name" 
+							name="name" 
+							required
+							placeholder="Popescu Ioan"
+								class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white placeholder-slate-500 transition"
+							>
+						</div>
+
+						<div>
+						<label class="block text-sm font-semibold text-white mb-2">Adresa de Email</label>
+						<input 
+							type="email" 
+							id="email" 
+							name="email" 
+							required
+							placeholder="tu@exemplu.com"
+							class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white placeholder-slate-500 transition"
+						>
+								class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white placeholder-slate-500 transition"
+							>
+						</div>
+
+						<div>
+						<label class="block text-sm font-semibold text-white mb-2">Compania (Opțional)</label>
+						<input 
+							type="text" 
+							id="company" 
+							name="company" 
+							placeholder="Nume Companie"
+							class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white placeholder-slate-500 transition"
+						>
+								class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white placeholder-slate-500 transition"
+							>
+						</div>
+
+						<div>
+						<label class="block text-sm font-semibold text-white mb-2">Ce Ai Nevoie</label>
+						<select 
+							id="service" 
+							name="service" 
+							class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white bg-slate-900 transition"
+						>
+							<option value="">Alege o opciune...</option>
+							<option value="web-dev">Website Nou</option>
+							<option value="shopify">Magazin Shopify</option>
+							<option value="web-app">Aplicație Web</option>
+							<option value="design">Design & Branding</option>
+							<option value="seo">SEO & Optimizare</option>
+							<option value="other">Altceva</option>
+							</select>
+						</div>
+
+						<div>
+						<label class="block text-sm font-semibold text-white mb-2">Povește-mi despre proiect</label>
+						<textarea 
+							id="message" 
+							name="message" 
+							rows="6"
+							required
+							placeholder="Descrie proiectul, budgetul și termenele tale..."
+							class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white placeholder-slate-500 transition resize-none"
+						></textarea>
+								class="w-full px-4 py-3 rounded-lg border border-slate-700 text-white placeholder-slate-500 transition resize-none"
+							></textarea>
+						</div>
+
+						<button 
+							type="submit"
+							class="w-full px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition transform hover:scale-105"
+						>
+							Trimite Mesaj
+						</button>
+
+						<div id="form-message" class="hidden p-4 rounded-lg"></div>
+					</form>
 				</div>
 
 				<!-- Contact Info -->
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-phone"></i>
-						<h3>Telefon</h3>
-						<p><a href="tel:+40771324731">+40 771 324 731</a></p>
-						<p><small>Disponibil Luni - Vineri, 9:00 - 18:00</small></p>
-					</div>
-				</div>
+				<div class="scroll-fade" style="animation-delay: 0.2s;">
+					<h2 class="text-3xl font-bold text-white mb-8">Contactează-mă Direct</h2>
 
-				<!-- Email Info -->
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-envelope"></i>
-						<h3>Email</h3>
-						<p><a href="mailto:agency@raised.ro">agency@raised.ro</a></p>
-						<p><small>Răspundem în maximum 24 de ore</small></p>
-					</div>
-				</div>
-
-				<!-- Location Info -->
-				<div class="col-sm-4">
-					<div class="contact">
-						<i class="fa fa-map-marker"></i>
-						<h3>Locație</h3>
-						<p>Timisoara, România</p>
-						<p><small>Servicii online pentru toată România</small></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row" style="margin-top: 60px;">
-				<div class="col-md-8 col-md-offset-2">
-					<h3 style="text-align: center; color: #fff; margin-bottom: 30px;">Trimite-ne un Mesaj Direct</h3>
-					<p style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 20px;">Completează formularul și-ți vom răspunde cât de curând cu o soluție pentru nevoile tale.</p>
-
-					<!-- WhatsApp Direct Link -->
-					<div style="text-align: center; margin-bottom: 30px;">
-												<a href="https://wa.me/40771324731?text=Salut!%20Am%20o%20intrebare%20despre%20serviciile%20voastre%20web." target="_blank" class="white-btn" style="display: inline-block; margin: 10px;">
-							<i class="fa fa-whatsapp" style="margin-right: 8px;"></i> Trimite Mesaj WhatsApp
-						</a>
-					</div>
-
-					<!-- Contact Form -->
-					<form class="contact-form" id="contact-form">
-						<div class="row">
-							<div class="col-md-6">
-								<input class="input" type="text" placeholder="Numele tău" name="name" required>
+					<!-- Email -->
+					<div class="mb-12">
+						<div class="flex items-start gap-4">
+							<div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+								</svg>
 							</div>
-							<div class="col-md-6">
-								<input class="input" type="email" placeholder="Email-ul tău" name="email" required>
+							<div>
+								<h3 class="text-lg font-bold text-white mb-1">Email</h3>
+							<p class="text-slate-400 mb-2">Răspund la toate mesajele în 24 de ore</p>
+								<a href="mailto:hello@raised.ro" class="text-indigo-400 hover:text-indigo-300 font-semibold">
+									hello@raised.ro
+								</a>
 							</div>
 						</div>
-						<textarea class="input" placeholder="Mesajul tău..." name="message" required></textarea>
-						<button class="white-btn" type="submit">Trimite Mesaj</button>
-					</form>
+					</div>
 
-					<p style="text-align: center; color: rgba(255,255,255,0.6); font-size: 13px; margin-top: 20px;">
-						Sau contactează-ne direct pe <a href="https://wa.me/40771324731" target="_blank" style="color: #6195FF;">WhatsApp</a>
-					</p>
+					<!-- Phone -->
+					<div class="mb-12">
+						<div class="flex items-start gap-4">
+							<div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+								</svg>
+							</div>
+							<div>
+							<h3 class="text-lg font-bold text-white mb-1">Telefon</h3>
+							<p class="text-slate-400 mb-2">Apelă-mă pentru o discuție rapidă</p>
+								<a href="tel:+40771324731" class="text-indigo-400 hover:text-indigo-300 font-semibold">
+									+40 771 324 731
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Response Time -->
+					<div class="mb-12">
+						<div class="flex items-start gap-4">
+							<div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+							<div>
+							<h3 class="text-lg font-bold text-white mb-1">Timp de Răspuns</h3>
+							<p class="text-slate-400">Răspund la mesaje în maximum 24 de ore</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Social -->
+					<div>
+						<h3 class="text-lg font-bold text-white mb-4">Urmărește-mă</h3>
+						<div class="flex gap-4">
+							<a href="https://instagram.com/raisedro" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition">
+								<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.914 4.914 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.913 4.913 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"></path>
+								</svg>
+							</a>
+							<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition">
+								<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<!-- ANPC Dispute Resolution -->
-	<div id="anpc-links" class="anpc-section">
-		<div class="container">
-			<div class="anpc-grid">
-				<a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow" class="anpc-link">
-					<img src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sal.png" alt="Solutionarea Alternativa a Litigiilor" class="anpc-badge">
-				</a>
-				<a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow" class="anpc-link">
-					<img src="https://wpfitness.eu/wp-content/uploads/2022/10/anpc-sol.png" alt="Solutionarea Online a Litigiilor" class="anpc-badge">
-				</a>
+	<!-- FAQ Section -->
+	<section class="py-24 px-4 bg-slate-900">
+		<div class="max-w-4xl mx-auto">
+			<div class="text-center mb-16 scroll-fade">
+			<h2 class="text-4xl font-bold text-white mb-4">Intrebări Frecvente</h2>
+			<p class="text-xl text-slate-400">Răspunsuri la întrebările comune despre lucrul cu Raised</p>
+			</div>
+
+			<div class="space-y-6 scroll-fade" style="animation-delay: 0.2s;">
+				<div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+				<h3 class="text-lg font-bold text-white mb-2">Cât durează să construiți un website?</h3>
+				<p class="text-slate-400">Majoritatea proiectelor durează 4-8 săptămâni, depinde de complexitate. Înamn cu detalii exacte în faza de descoperire.</p>
+				</div>
+
+				<div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+				<h3 class="text-lg font-bold text-white mb-2">Oferită suport după lansare?</h3>
+				<p class="text-slate-400">Da! Ofer pachete de mentenanță, suport hosting și consultanță strategică după lansare.</p>
+				</div>
+
+				<div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+					<h3 class="text-lg font-bold text-white mb-2">What's your minimum project budget?</h3>
+					<p class="text-slate-400">Projects start at $5,000. We work with businesses of all sizes and can discuss custom pricing based on your needs.</p>
+				</div>
+
+				<div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+					<h3 class="text-lg font-bold text-white mb-2">Can you work with our existing systems?</h3>
+					<p class="text-slate-400">Absolutely. We specialize in integrating with existing tools and can migrate from legacy systems seamlessly.</p>
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Footer -->
-	<footer id="footer" class="sm-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<!-- footer logo -->
-					<div class="footer-logo">
-						<a href="/"><img src="img/logo-alt.png" alt="raised logo"></a>
+	<footer class="bg-slate-900 border-t border-slate-800 py-12 px-4">
+		<div class="max-w-7xl mx-auto">
+			<div class="grid md:grid-cols-4 gap-12 mb-8">
+				<div>
+					<div class="flex items-center gap-2 mb-4">
+						<div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold">R</span>
+						</div>
+						<span class="text-lg font-bold text-white">Raised</span>
 					</div>
-
-					<!-- footer follow -->
-					<ul class="footer-follow">
-						<li><a href="https://instagram.com/raisedro" target="_blank"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-
-					<!-- footer copyright -->
-					<div class="footer-copyright">
-						<p>Copyright © 2025. All Rights Reserved. Designed by <a href="https://raised.ro" target="_blank">Raised.ro</a></p>
-					</div>
+					<p class="text-slate-400">Digital agency building growth-focused solutions.</p>
 				</div>
+				<div>
+					<h4 class="font-bold text-white mb-4">Quick Links</h4>
+					<ul class="space-y-2">
+						<li><a href="./index.html" class="text-slate-400 hover:text-white transition">Home</a></li>
+						<li><a href="./services.html" class="text-slate-400 hover:text-white transition">Services</a></li>
+						<li><a href="./portfolio.html" class="text-slate-400 hover:text-white transition">Portfolio</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-bold text-white mb-4">Services</h4>
+					<ul class="space-y-2">
+						<li><a href="./services.html" class="text-slate-400 hover:text-white transition">Web Development</a></li>
+						<li><a href="./services.html" class="text-slate-400 hover:text-white transition">E-Commerce</a></li>
+						<li><a href="./services.html" class="text-slate-400 hover:text-white transition">UI/UX Design</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-bold text-white mb-4">Contact</h4>
+					<p class="text-slate-400 mb-2">hello@raised.ro</p>
+					<p class="text-slate-400">+40 771 324 731</p>
+				</div>
+			</div>
+			<div class="border-t border-slate-800 pt-8 text-center text-slate-500">
+				<p>© 2024 Raised. All rights reserved.</p>
 			</div>
 		</div>
 	</footer>
 
-	<!-- Back to top -->
-	<div id="back-to-top"></div>
+	<!-- JavaScript -->
+	<script>
+		// Mobile Menu Toggle
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
 
-	<!-- Preloader -->
-	<div id="preloader">
-		<div class="preloader">
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	</div>
+		function toggleMobileMenu() {
+			mobileMenu.classList.toggle('hidden');
+		}
 
-	<!-- jQuery Plugins -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+		mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+		// Close mobile menu when link is clicked
+		const mobileLinks = mobileMenu.querySelectorAll('a');
+		mobileLinks.forEach(link => {
+			link.addEventListener('click', toggleMobileMenu);
+		});
+
+		// Form Handling
+		const contactForm = document.getElementById('contact-form');
+		const formMessage = document.getElementById('form-message');
+
+		contactForm.addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			// Get form data
+			const name = document.getElementById('name').value;
+			const email = document.getElementById('email').value;
+			const company = document.getElementById('company').value;
+			const service = document.getElementById('service').value;
+			const message = document.getElementById('message').value;
+
+			// Basic validation
+			if (!name || !email || !message) {
+				showMessage('Please fill in all required fields', 'error');
+				return;
+			}
+
+			// Email validation
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(email)) {
+				showMessage('Please enter a valid email address', 'error');
+				return;
+			}
+
+			// Create mailto link with form data
+			const subject = `New Project Inquiry - ${service || 'General'}`;
+			const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nService: ${service}\nMessage: ${message}`;
+			const mailtoLink = `mailto:hello@raised.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+			// Show success message
+			showMessage('Thank you for reaching out! We\'ll get back to you soon.', 'success');
+
+			// Open email client
+			window.location.href = mailtoLink;
+
+			// Reset form after delay
+			setTimeout(() => {
+				contactForm.reset();
+				formMessage.classList.add('hidden');
+			}, 1000);
+		});
+
+		function showMessage(text, type) {
+			formMessage.textContent = text;
+			formMessage.classList.remove('hidden');
+			if (type === 'success') {
+				formMessage.classList.add('bg-green-900', 'border', 'border-green-700', 'text-green-100');
+				formMessage.classList.remove('bg-red-900', 'border-red-700', 'text-red-100');
+			} else {
+				formMessage.classList.add('bg-red-900', 'border', 'border-red-700', 'text-red-100');
+				formMessage.classList.remove('bg-green-900', 'border-green-700', 'text-green-100');
+			}
+		}
+
+		// Scroll Animations
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver(function(entries) {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, observerOptions);
+
+		document.querySelectorAll('.scroll-fade').forEach(el => {
+			observer.observe(el);
+		});
+	</script>
 </body>
 
 </html>
