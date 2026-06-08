@@ -2,734 +2,1249 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Raised - Professional Websites, E-Commerce & Web Apps | Digital Studio</title>
-	<meta name="description" content="We build high-performance websites, e-commerce platforms, and custom web applications for businesses. 30+ completed projects, proven results: traffic, conversions, revenue.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raised - Agenție Web Premium | Website-uri Care Vând</title>
+    <meta name="description" content="Raised - Agenție Digitală Premium din România. Website-uri custom, platforme e-commerce, aplicații web. 30+ proiecte finalizate. €1,000-€50,000. Consultanță gratuită. Soluții digitale pentru afaceri ambiţioase.">
 
-	<!-- Open Graph -->
-	<meta property="og:title" content="Raised - Professional Web Development & Digital Solutions">
-	<meta property="og:description" content="Digital studio building websites, e-commerce platforms, and web apps that drive real business results. 30+ projects, proven success.">
-	<meta property="og:url" content="https://raised.ro">
-	<meta property="og:type" content="website">
-	<meta property="og:locale" content="en_US">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Raised - Agenție Digitală Premium | Website-uri Care Generează Venituri">
+    <meta property="og:description" content="Agenție digitală premium care construiește website-uri și aplicații web care generează rezultate măsurabile. 30+ proiecte de succes. Servicii Web Design, E-Commerce Development și SEO pentru afaceri din România și Europa.">
+    <meta property="og:url" content="https://raised.ro">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ro_RO">
 
-	<!-- Tailwind CSS CDN -->
-	<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-	<!-- Inter Font -->
-	<link rel="preconnect" href="https://rsms.me/">
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-	<style>
-		* { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-		
-		body {
-			background-color: #0f172a;
-			color: #e2e8f0;
-			scroll-behavior: smooth;
-		}
+    <style>
+        * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
 
-		.gradient-hero {
-			background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
-		}
+        .gradient-hero {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+        }
 
-		.btn-primary {
-			background-color: #6366f1;
-			transition: all 0.3s ease;
-		}
+        .btn-primary {
+            background-color: #6366f1;
+            transition: all 0.3s ease;
+        }
 
-		.btn-primary:hover {
-			background-color: #4f46e5;
-			box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.3);
-			transform: translateY(-2px);
-		}
+        .btn-primary:hover {
+            background-color: #4f46e5;
+            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.3);
+            transform: translateY(-2px);
+        }
 
-		.card-hover {
-			transition: all 0.3s ease;
-		}
+        .card-hover {
+            transition: all 0.3s ease;
+        }
 
-		.card-hover:hover {
-			transform: translateY(-4px);
-			box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-		}
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
 
-		@keyframes fadeInUp {
-			from {
-				opacity: 0;
-				transform: translateY(20px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-		.fade-in-up {
-			animation: fadeInUp 0.6s ease-out forwards;
-		}
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
 
-		.delay-100 { animation-delay: 0.1s; }
-		.delay-200 { animation-delay: 0.2s; }
-		.delay-300 { animation-delay: 0.3s; }
-		.delay-400 { animation-delay: 0.4s; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
 
-		/* Scroll animations */
-		.scroll-fade {
-			opacity: 0;
-			transform: translateY(20px);
-			transition: all 0.6s ease-out;
-		}
+        /* Scroll animations */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
 
-		.scroll-fade.visible {
-			opacity: 1;
-			transform: translateY(0);
-		}
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-		header {
-			background-color: rgba(15, 23, 42, 0.95);
-			backdrop-filter: blur(10px);
-		}
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
 
-		@keyframes float {
-			0%, 100% { transform: translateY(0px); }
-			50% { transform: translateY(-10px); }
-		}
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
 
-		.animate-blob {
-			animation: float 6s ease-in-out infinite;
-		}
+        .animate-blob {
+            animation: float 6s ease-in-out infinite;
+        }
 
-		.animation-delay-4000 {
-			animation-delay: 4s;
-		}
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
 
-		.testimonial-card {
-			border-left: 3px solid #6366f1;
-		}
-	</style>
+        .testimonial-card {
+            border-left: 3px solid #6366f1;
+        }
 
-	<!-- Schema.org Structured Data -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Organization",
-		"name": "Raised",
-		"description": "Digital studio building professional websites, e-commerce platforms, and custom web applications",
-		"url": "https://raised.ro",
-		"sameAs": ["https://instagram.com/raisedro"],
-		"contactPoint": {
-			"@type": "ContactPoint",
-			"contactType": "Sales",
-			"email": "hello@raised.ro"
-		}
-	}
-	</script>
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            body {
+                font-size: 15px;
+            }
+
+            /* Improve touch targets on mobile - minimum 44px */
+            button, a[href^="https"], a[href="#"] {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            /* Better spacing for mobile sections */
+            section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            /* Improve mobile text readability */
+            h1, h2, h3 {
+                line-height: 1.3;
+                letter-spacing: -0.5px;
+            }
+
+            p {
+                line-height: 1.6;
+            }
+
+            /* Better button sizing on mobile */
+            .px-8 {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+
+            /* Improve mobile card spacing */
+            .p-8 {
+                padding: 1.5rem !important;
+            }
+
+            /* Better mobile margins */
+            .mb-6 {
+                margin-bottom: 1rem !important;
+            }
+
+            .mb-8 {
+                margin-bottom: 1.25rem !important;
+            }
+
+            /* Optimize grid gaps on mobile */
+            .gap-8 {
+                gap: 1rem !important;
+            }
+
+            /* Better mobile hero spacing */
+            .fade-in-up {
+                padding-bottom: 1rem;
+            }
+
+            /* Improve footer on mobile */
+            footer {
+                font-size: 14px;
+            }
+
+            /* Better input/interactive element sizing */
+            input, textarea, select {
+                min-height: 44px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Improve grid layouts on tablets */
+            .grid {
+                gap: 1.25rem;
+            }
+
+            /* Better spacing on medium screens */
+            section {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Raised",
+        "description": "Premium digital agency building high-conversion websites, e-commerce platforms, and custom web applications",
+        "url": "https://raised.ro",
+        "sameAs": ["https://instagram.com/raisedro", "https://linkedin.com/company/raised"],
+        "logo": "https://raised.ro/logo.png",
+        "image": "https://raised.ro/og-image.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Sales",
+            "email": "hello@raised.ro",
+            "telephone": "+40771324731",
+            "areaServed": ["RO", "EU", "US"],
+            "availableLanguage": ["en", "ro"]
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "RO"
+        },
+        "service": [
+            {
+                "@type": "Service",
+                "name": "Web Design",
+                "description": "Professional website design and development"
+            },
+            {
+                "@type": "Service",
+                "name": "E-Commerce Development",
+                "description": "Shopify stores and custom e-commerce platforms"
+            },
+            {
+                "@type": "Service",
+                "name": "Web Application Development",
+                "description": "Custom web applications and SaaS platforms"
+            }
+        ],
+        "knowsAbout": ["Web Design", "Web Development", "E-Commerce", "SEO", "UI/UX Design", "Shopify", "JavaScript", "React"],
+        "priceRange": "€150 - €3000"
+    }
+    </script>
+
 </head>
 
 <body class="overflow-x-hidden">
-	<!-- Header/Navigation -->
-	<header class="sticky top-0 z-50 w-full">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-			<!-- Logo -->
-			<a href="#home" class="flex items-center gap-2">
-				<div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
-					<span class="text-white font-bold text-lg">R</span>
-				</div>
-				<span class="text-xl font-bold text-white">Raised</span>
-			</a>
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-2" aria-label="Raised home">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">R</span>
+                </div>
+                <span class="text-xl font-bold text-white">Raised</span>
+            </a>
 
-			<!-- Desktop Navigation -->
-			<nav class="hidden lg:flex items-center gap-8">
-				<a href="#home" class="text-slate-300 hover:text-white transition">Home</a>
-				<a href="#services" class="text-slate-300 hover:text-white transition">What We Do</a>
-				<a href="#work" class="text-slate-300 hover:text-white transition">Projects</a>
-				<a href="#testimonials" class="text-slate-300 hover:text-white transition">Clients</a>
-				<a href="https://api.whatsapp.com/send/?phone=40771324731&text=Hi%21+I%27d+like+a+free+consultation.&type=phone_number&app_absent=0" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Let's Talk</a>
-			</nav>
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+                <a href="#home" class="text-slate-300 hover:text-white transition">Acasă</a>
+                <a href="#services" class="text-slate-300 hover:text-white transition">Servicii</a>
+                <a href="#work" class="text-slate-300 hover:text-white transition">Portofoliu</a>
+                <a href="#testimonials" class="text-slate-300 hover:text-white transition">Clienți</a>
+                <a href="https://api.whatsapp.com/send/?phone=40771324731&text=Salutare%21+A%C5%9F+dori+o+consulta%C8%9Bie+gratuit%C4%83.&type=phone_number&app_absent=0" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition" aria-label="Consultație gratuită pe WhatsApp">Să Vorbim</a>
+            </nav>
 
-			<!-- Mobile Menu Button -->
-			<button id="mobile-menu-button" class="lg:hidden flex flex-col gap-1.5 w-6 h-6 p-0 bg-transparent border-0 cursor-pointer">
-				<span class="block w-full h-0.5 bg-white rounded transition"></span>
-				<span class="block w-full h-0.5 bg-white rounded transition"></span>
-				<span class="block w-full h-0.5 bg-white rounded transition"></span>
-			</button>
-		</div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden flex flex-col gap-1.5 w-6 h-6 p-0 bg-transparent border-0 cursor-pointer" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="block w-full h-0.5 bg-white rounded transition"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition"></span>
+            </button>
+        </div>
 
-		<!-- Mobile Menu -->
-		<div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800">
-			<nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
-				<a href="#home" class="text-slate-300 hover:text-white transition py-2">Home</a>
-				<a href="#services" class="text-slate-300 hover:text-white transition py-2">What We Do</a>
-				<a href="#work" class="text-slate-300 hover:text-white transition py-2">Projects</a>
-				<a href="#testimonials" class="text-slate-300 hover:text-white transition py-2">Clients</a>
-				<a href="#testimonials" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition inline-block">Let's Talk</a>
-			</nav>
-		</div>
-	</header>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800">
+            <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4" aria-label="Mobile navigation">
+                <a href="#home" class="text-slate-300 hover:text-white transition py-2">Acasă</a>
+                <a href="#services" class="text-slate-300 hover:text-white transition py-2">Servicii</a>
+                <a href="#work" class="text-slate-300 hover:text-white transition py-2">Portofoliu</a>
+                <a href="#testimonials" class="text-slate-300 hover:text-white transition py-2">Clienți</a>
+                <a href="https://api.whatsapp.com/send/?phone=40771324731&text=Salutare%21+A%C5%9F+dori+o+consulta%C8%9Bie+gratuit%C4%83.&type=phone_number&app_absent=0" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition inline-block">Să Vorbim</a>
+            </nav>
+        </div>
+    </header>
 
-	<!-- Hero Section -->
-	<section id="home" class="pt-6 sm:pt-12 pb-24 sm:pb-40 px-4 gradient-hero relative overflow-hidden">
-		<div class="max-w-5xl mx-auto">
-			<div class="fade-in-up">
-<div class="mb-3 sm:mb-4">
-				<p class="text-indigo-400 font-semibold text-base sm:text-lg letter-spacing">Digital Agency</p>
-			</div>
-			
-			<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 sm:mb-10 leading-tight tracking-tight">
-				We build websites that <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">generate leads and drive revenue, not just traffic.</span>
-			</h1>
-			
-			<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 mb-10 sm:mb-16 leading-relaxed max-w-3xl opacity-90">
-				We don't just build pretty websites. We build digital assets that generate leads and fuel business growth.
-				
-				<div class="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-16 sm:mb-24">
-					<a href="https://api.whatsapp.com/send/?phone=40771324731&text=Hi%21+I%27d+like+a+free+consultation.&type=phone_number&app_absent=0" class="px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-bold rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition transform hover:scale-105 text-center text-sm sm:text-base shadow-lg hover:shadow-xl">
-						Get Free Consultation
-					</a>
-					<a href="#work" class="px-8 sm:px-10 py-4 sm:py-5 border-2 border-indigo-400 text-indigo-200 font-bold rounded-xl hover:bg-indigo-900 hover:border-indigo-300 transition text-center text-sm sm:text-base backdrop-blur-sm">
-						View Our Projects
-					</a>
-				</div>
+    <!-- Hero Section -->
+    <section id="home" class="pt-6 sm:pt-12 pb-20 sm:pb-40 px-4 gradient-hero relative overflow-hidden">
+        <div class="max-w-5xl mx-auto">
+            <div class="fade-in-up">
+                <div class="mb-3 sm:mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-900/30 border border-indigo-500/30 backdrop-blur-sm">
+                    <span class="flex h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                    <p class="text-indigo-300 font-semibold text-sm">Agenție Digitală Premium</p>
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight tracking-tight">
+                    Website-uri Premium Care <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">Generează Venituri Reale</span>
+                </h1>
+                
+                <p class="text-sm sm:text-lg md:text-xl text-slate-300 mb-10 sm:mb-16 leading-relaxed max-w-3xl">
+                    Construim soluții digitale pentru afaceri ambiţioase. Website-uri high-converting, platforme e-commerce și aplicații custom care generează rezultate măsurabile. 30+ proiecte finalizate. Investiția unui proiect începe de la €1.000.
+                </p>
+                
+                <div class="flex flex-col gap-3 sm:flex-row sm:gap-5 mb-12 sm:mb-20">
+                    <a href="https://api.whatsapp.com/send/?phone=40771324731&text=Salutare%21+As+dori+o+consultatie+gratuita+de+30+minute.&type=phone_number&app_absent=0" class="px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-bold rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition transform hover:scale-105 text-center text-sm sm:text-base shadow-lg hover:shadow-xl w-full sm:w-auto" aria-label="Rezervă consultație gratuită de 30 de minute">
+                        Consultație Gratuită
+                    </a>
+                    <a href="#work" class="px-6 sm:px-10 py-4 sm:py-5 border-2 border-indigo-400 text-indigo-200 font-bold rounded-xl hover:bg-indigo-900 hover:border-indigo-300 transition text-center text-sm sm:text-base backdrop-blur-sm w-full sm:w-auto" aria-label="Vezi studiile noastre de caz">
+                        Vezi Portofoliu
+                    </a>
+                </div>
 
-				<!-- Trust Badges -->
-			<div class="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 pt-12 sm:pt-16 border-t border-slate-700/50">
-				<div class="bg-slate-800/40 backdrop-blur rounded-xl p-4 sm:p-6 border border-slate-700/50 hover:border-indigo-500/30 transition duration-300 flex flex-col justify-center items-center min-h-32 sm:min-h-40">
-					<div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-2 sm:mb-3">30+</div>
-					<p class="text-xs sm:text-sm text-slate-300 font-medium leading-tight text-center">Websites & Apps</p>
-				</div>
-				<div class="bg-slate-800/40 backdrop-blur rounded-xl p-4 sm:p-6 border border-slate-700/50 hover:border-indigo-500/30 transition duration-300 flex flex-col justify-center items-center min-h-32 sm:min-h-40">
-					<div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-2 sm:mb-3">25+</div>
-					<p class="text-xs sm:text-sm text-slate-300 font-medium leading-tight text-center">Active Clients</p>
-				</div>
-				<div class="bg-slate-800/40 backdrop-blur rounded-xl p-4 sm:p-6 border border-slate-700/50 hover:border-indigo-500/30 transition duration-300 flex flex-col justify-center items-center min-h-32 sm:min-h-40">
-					<div class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-2 sm:mb-3">14d</div>
-					<p class="text-xs sm:text-sm text-slate-300 font-medium leading-tight text-center">Concept to Live</p>
-				</div>
-			</div>
-		</div>
+                <!-- Trust Indicators -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-12 sm:pt-16 border-t border-slate-700/50">
+                    <div class="flex items-center gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30">
+                                <svg class="h-6 w-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-lg sm:text-xl font-bold text-white">30+ Proiecte</p>
+                            <p class="text-sm text-slate-400">Finalizate cu Succes</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30">
+                                <svg class="h-6 w-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-lg sm:text-xl font-bold text-white">Soluții Digitale Premium</p>
+                            <p class="text-sm text-slate-400">Construite pentru a Genera Rezultate</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30">
+                                <svg class="h-6 w-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-lg sm:text-xl font-bold text-white">1-2 Săptămâni</p>
+                            <p class="text-sm text-slate-400">De la Concept la Lansare</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		<!-- Decorative elements -->
-		<div class="absolute top-20 right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-		<div class="absolute -bottom-8 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-	</section>
+        <!-- Decorative elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute -bottom-8 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+    </section>
 
-	<!-- Services Section -->
-	<section id="services" class="py-20 sm:py-32 px-4 bg-slate-900">
-		<div class="max-w-6xl mx-auto">
-			<div class="text-center mb-16 sm:mb-20 scroll-fade">
-				<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">What We Do</h2>
-				<p class="text-base sm:text-lg md:text-xl text-slate-400">Real digital solutions, not empty promises</p>
-			</div>
+    <!-- About Raised Section -->
+    <section id="about" class="py-20 sm:py-32 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-10 sm:gap-16 items-center">
+                <!-- Left: Mission & Values -->
+                <div class="scroll-fade">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                        Construit pentru afaceri ambițioase
+                    </h2>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 mb-6 leading-relaxed">
+                        Raised a apărut dintr-o simplă frustrare: cele mai multe agenții web prioritizează estetica în detrimentul rezultatelor. Am construit Raised pentru a fi diferit.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-indigo-500 pl-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Misiunea Noastră</h3>
+                            <p class="text-slate-400">Construim active digitale premium care generează ROI măsurabil pentru clienții noștri. Fiecare decizie este condusă de profit, nu de portofoliu.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-purple-500 pl-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Ce Ne Diferențiază</h3>
+                            <p class="text-slate-400">Combinăm expertise tehnică profundă cu optimizare conversii. Website-ul tău nu e frumos din întâmplare – fiecare alegere de design se bazează pe date și psihologie.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-cyan-500 pl-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Angajamentul Nostru</h3>
+                            <p class="text-slate-400">Comunicare transparentă, termene garantate și rezultate măsurabile. Fără surprize. Fără schimbări de scope. Doar muncă premium care convertește.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#work" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold mt-10 group" aria-label="Vezi studiile noastre de caz și rezultate">
+                        Vezi rezultatele în acțiune
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                    </a>
+                </div>
+                
+                <!-- Right: Team/Credentials -->
+                <div class="scroll-fade" style="animation-delay: 0.1s;">
+                    <div class="space-y-8">
+                        <!-- Credential Card 1 -->
+                        <div class="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700/50 hover:border-indigo-500/50 transition duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30">
+                                        <svg class="h-6 w-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1">Performance-First</h4>
+                                    <p class="text-sm text-slate-400">Fiecare site se încarcă în sub 2 secunde. Optimizat SEO din prima zi. Perfect pe mobil și desktop.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Credential Card 2 -->
+                        <div class="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700/50 hover:border-purple-500/50 transition duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30">
+                                        <svg class="h-6 w-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1">ROI-Focused</h4>
+                                    <p class="text-sm text-slate-400">Măsurăm succesul prin conversii și venituri, nu prin metrici de vanitate. Cei mai mulți clienți văd ROI pozitiv în 6-12 luni.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Credential Card 3 -->
+                        <div class="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-500/50 transition duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30">
+                                        <svg class="h-6 w-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10h-8m8 0h8M3 5a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm2 16h12a2 2 0 002-2v-2H3v2a2 2 0 002 2z"></path></svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-white mb-1">Suport pe Viață</h4>
+                                    <p class="text-sm text-slate-400">Backup-uri automatice, patch-uri de securitate, monitorizare performance. Tu deții afacerea, noi deține responsabilitatea tehnică.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-				<!-- Service Card 1 -->
-				<div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-6 sm:p-8 card-hover border border-slate-700/50 hover:border-indigo-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300">
-					<div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-						</svg>
-					</div>
-					<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">Professional Websites</h3>
-				<p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Modern, responsive websites that look great on any device and rank well on Google. Clean design, fast performance, easy to manage.</p>
-					<a href="./services.html" class="text-indigo-400 hover:text-indigo-300 font-semibold inline-flex items-center gap-2">
-						Learn More →
-					</a>
-				</div>
+    <!-- Services Section -->
+    <section id="services" class="py-20 sm:py-32 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 sm:mb-20 scroll-fade">
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-5">Ce Construim</h2>
+                <p class="text-sm sm:text-lg md:text-xl text-slate-400">Servicii designate să genereze rezultate de afaceri</p>
+            </div>
 
-				<!-- Service Card 2 -->
-			<div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-purple-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.1s;">
-				<div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-						</svg>
-					</div>
-				<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">E-Commerce Platforms</h3>
-				<p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Complete Shopify or custom e-commerce stores. Sell 24/7, payment integration, automated inventory management, real-time sales reports.</p>
-					<a href="./services.html" class="text-purple-400 hover:text-purple-300 font-semibold inline-flex items-center gap-2">
-						Learn More →
-					</a>
-				</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Service Card 1 -->
+                <div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-6 sm:p-8 card-hover border border-slate-700/50 hover:border-indigo-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">Web Design Professional</h3>
+                <p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Website-uri moderne, responsive care arată bine pe orice dispozitiv și se clasează bine pe Google. Design curat, performanță rapidă, ușor de gestionat.</p>
+                    </a>
+                </div>
 
-				<!-- Service Card 3 -->
-			<div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-cyan-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.2s;">
-				<div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-						</svg>
-					</div>
-				<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">Custom Web Apps</h3>
-				<p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Custom web applications for your specific business needs. Data management, automation, reporting, API integrations. Scalable and secure.</p>
-					<a href="./services.html" class="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-2">
-						Learn More →
-					</a>
-				</div>
+                <!-- Service Card 2 -->
+            <div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-purple-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.1s;">
+                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">E-Commerce Platforms</h3>
+                <p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Magazinuri complete Shopify sau platforme e-commerce personalizate. Vinde 24/7, integrare plăți, gestionare inventar automată, rapoarte vânzări în timp real.</p>
+                    </a>
+                </div>
 
-				<!-- Service Card 4 -->
-			<div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-indigo-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.3s;">
-				<div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-cyan-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-						</svg>
-					</div>
-					<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">SEO & Performance</h3>
-				<p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Websites optimized for Google. Technical SEO, page speed, mobile-first design. The goal: let customers find you when they search.</p>
-					<a href="./services.html" class="text-indigo-400 hover:text-indigo-300 font-semibold inline-flex items-center gap-2">
-						Learn More →
-					</a>
-				</div>
+                <!-- Service Card 3 -->
+            <div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-cyan-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.2s;">
+                <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                    </div>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">Custom Web Apps</h3>
+                <p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Aplicații web personalizate pentru nevoile specifice ale afacerii tale. Gestionare date, automatizare, rapoarte, integrări API. Scalabile și sigure.</p>
+                    </a>
+                </div>
 
-				<!-- Service Card 5 -->
-			<div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-purple-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.4s;">
-				<div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-						</svg>
-					</div>
-				<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">UI/UX Design</h3>
-				<p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Modern and intuitive design. Interfaces that not only look great—they work great and help users accomplish their goals.</p>
-					<a href="./services.html" class="text-purple-400 hover:text-purple-300 font-semibold inline-flex items-center gap-2">
-						Learn More →
-					</a>
-				</div>
+                <!-- Service Card 4 -->
+            <div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-indigo-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.3s;">
+                <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-cyan-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">SEO & Performance</h3>
+                <p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Website-uri optimizate pentru Google. SEO tehnic, viteza pagini, design mobile-first. Obiectivul: să te găsească clienții când caută.</p>
+                    </a>
+                </div>
 
-				<!-- Service Card 6 -->
-			<div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-cyan-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.5s;">
-				<div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-						</svg>
-					</div>
-				<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">Maintenance & Support</h3>
-				<p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Your website doesn't end at launch. Updates, backups, monitoring, technical support. You focus on business, we focus on technology.</p>
-					<a href="./services.html" class="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-2">
-						Learn More →
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+                <!-- Service Card 5 -->
+            <div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-purple-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.4s;">
+                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">UX/UI Design</h3>
+                <p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Design modern și intuitiv. Interfețe care nu doar arată bine – funcționează excelent și ajută utilizatorii să-și atingă obiectivele.</p>
+                    </a>
+                </div>
 
-	<!-- Portfolio Preview Section -->
-	<section id="work" class="py-20 sm:py-32 px-4">
-		<div class="max-w-6xl mx-auto">
-			<div class="text-center mb-16 sm:mb-20 scroll-fade">
-			<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">Our Latest Projects</h2>
-			<p class="text-base sm:text-lg md:text-xl text-slate-400">Select case studies from our portfolio</p>
-			</div>
+                <!-- Service Card 6 -->
+            <div class="scroll-fade bg-slate-800/80 backdrop-blur rounded-2xl p-7 sm:p-8 card-hover border border-slate-700/50 hover:border-cyan-500/50 hover:bg-slate-800 transition shadow-lg hover:shadow-2xl duration-300" style="animation-delay: 0.5s;">
+                <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-7 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 leading-snug">Maintenance & Support</h3>
+                <p class="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed">Website-ul tău nu se termină la lansare. Actualizări, backup-uri, monitorizare, suport tehnic. Tu te focusezi pe afacere, noi pe tehnologie.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="space-y-8 sm:space-y-10">
-			<!-- Project 1 -->
-			<div class="scroll-fade group">
-				<div class="bg-slate-800/80 backdrop-blur rounded-2xl overflow-hidden border border-slate-700/50 hover:border-indigo-500/50 transition hover:shadow-2xl duration-300">
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-						<div class="relative overflow-hidden h-64 md:h-80">
-							<img src="img/proj1.png" alt="StreetLuxe – Premium Auto-Detailing" class="w-full h-full object-cover hover:scale-110 transition duration-500">
-						</div>
-						<div class="p-8 sm:p-10 flex flex-col justify-center">
-							<div class="mb-4 sm:mb-6">
-							<h3 class="text-2xl sm:text-3xl md:text-3xl font-bold text-white mb-3 sm:mb-4 leading-snug">StreetLuxe - Detailing Auto</h3>
-							<p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-6">Website de prezentare premium dezvoltat pentru un atelier de detailing auto. Proiectul a pus accent pe un design vizual de impact, optimizarea avansată a galeriilor foto "înainte/după" și un sistem intuitiv de programări online. <span class="text-indigo-400 font-semibold">+240% organic traffic, 35% conversion increase</span> in 6 months.</p>
-							</div>
-							<div class="flex gap-2 sm:gap-3 flex-wrap">
-							<span class="text-xs sm:text-sm bg-indigo-900/50 text-indigo-200 px-4 py-2 rounded-full font-medium border border-indigo-700/30">Web Design</span>
-								<span class="text-xs sm:text-sm bg-indigo-900/50 text-indigo-200 px-4 py-2 rounded-full font-medium border border-indigo-700/30">SEO</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+    <!-- Portfolio Preview Section -->
+    <section id="work" class="py-16 sm:py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10 sm:mb-12 scroll-fade">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">Studii de Caz</h2>
+                <p class="text-sm sm:text-base text-slate-400">Strategii dovedite care generează rezultate</p>
+            </div>
 
-			<!-- Project 2 -->
-			<div class="scroll-fade group" style="animation-delay: 0.1s;">
-				<div class="bg-slate-800/80 backdrop-blur rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition hover:shadow-2xl duration-300">
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-						<div class="relative overflow-hidden h-64 md:h-80 md:order-2">
-							<img src="img/proj2.png" alt="E-Commerce Project" class="w-full h-full object-cover hover:scale-110 transition duration-500">
-						</div>
-						<div class="p-8 sm:p-10 flex flex-col justify-center md:order-1">
-							<div class="mb-4 sm:mb-6">
-							<h3 class="text-2xl sm:text-3xl md:text-3xl font-bold text-white mb-3 sm:mb-4 leading-snug">Rysen.ro - E-Commerce</h3>
-							<p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-6">Magazin online de înaltă performanță creat pentru un brand de periferice de gaming. Platforma oferă un design modern (Dark Mode nativ), integrări securizate de plată și un flux complet automatizat pentru gestionarea stocurilor și a livrărilor <span class="text-purple-400 font-semibold">€120K revenue in year 1, scaled to 50+ vendors</span>.</p>
-							</div>
-							<div class="flex gap-2 sm:gap-3 flex-wrap">
-								<span class="text-xs sm:text-sm bg-purple-900/50 text-purple-200 px-4 py-2 rounded-full font-medium border border-purple-700/30">E-Commerce</span>
-							<span class="text-xs sm:text-sm bg-purple-900/50 text-purple-200 px-4 py-2 rounded-full font-medium border border-purple-700/30">Shopify</span>
-							</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div class="space-y-8">
+                <!-- Case Study 1 -->
+                <div class="scroll-fade group">
+                    <div class="bg-slate-800/50 backdrop-blur rounded-2xl overflow-hidden border border-slate-700/30 hover:border-indigo-500/40 transition duration-300">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+                            <!-- Image -->
+                            <div class="relative overflow-hidden h-56 md:h-64 w-full bg-slate-900">
+                                <img src="img/proj1.png" alt="StreetLuxe Premium Auto Detailing Website - Case Study showing +240% organic traffic increase" loading="lazy" class="w-full h-full object-contain">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                            </div>
+                            
+                            <!-- Content -->
+                            <div class="p-6 sm:p-7">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">StreetLuxe - Servicii Auto Premium</h3>
+                                <p class="text-xs sm:text-sm text-slate-300 mb-3 leading-relaxed">Website premium pentru un studio profesional de detaliere auto. Caracteristici design de impact visual, galerii foto optimizate cu comparații înainte/după, și sistem de rezervare online intuitiv. <span class="font-semibold text-indigo-400">Conceput pentru a îmbunătăți vizibilitatea, experiența utilizatorului și generarea de clienți.</span></p>
+                                
+                                <div class="flex gap-2 flex-wrap mb-4">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-lg bg-indigo-900/30 border border-indigo-500/30 text-xs font-semibold text-indigo-300">Web Design</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-lg bg-indigo-900/30 border border-indigo-500/30 text-xs font-semibold text-indigo-300">SEO</span>
+                                </div>
+                                
+                                <div class="flex gap-2">
+                                    <span class="px-4 py-2 bg-slate-700 text-slate-300 font-semibold rounded-lg text-xs sm:text-sm inline-flex items-center gap-1.5 cursor-not-allowed opacity-70" aria-label="Case study details coming soon">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                        View Live
+                                    </span>
+                                    <span class="px-4 py-2 border border-slate-600 text-slate-300 font-semibold rounded-lg text-xs sm:text-sm cursor-not-allowed opacity-70" aria-label="Full case study coming soon">
+                                        Case Study
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-			<div class="text-center mt-12 scroll-fade">
-				<button disabled class="inline-block px-8 py-3 border-2 border-slate-600 text-slate-500 font-semibold rounded-lg opacity-50 cursor-not-allowed transition">
-					All Projects
-				</button>
-			</div>
-		</div>
-	</section>
+                <!-- Case Study 2 -->
+                <div class="scroll-fade group" style="animation-delay: 0.1s;">
+                    <div class="bg-slate-800/50 backdrop-blur rounded-2xl overflow-hidden border border-slate-700/30 hover:border-purple-500/40 transition duration-300">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+                            <!-- Content -->
+                            <div class="p-6 sm:p-7 md:order-2">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Rysen.ro - E-Commerce Gaming</h3>
+                                <p class="text-xs sm:text-sm text-slate-300 mb-3 leading-relaxed">Platformă e-commerce cu performanță mare pentru o marcă de accesorii gaming. Magazin Shopify personalizat cu dark mode nativ, integrări plăți sigure și gestionare inventar automată cu suport pentru 50+ furnizori. <span class="font-semibold text-purple-400">Construit pentru a susține creșterea e-commerce pe termen lung și scalabilitate.</span></p>
+                                
+                                <div class="flex gap-2 flex-wrap mb-4">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-lg bg-purple-900/30 border border-purple-500/30 text-xs font-semibold text-purple-300">E-Commerce</span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-lg bg-purple-900/30 border border-purple-500/30 text-xs font-semibold text-purple-300">Shopify</span>
+                                </div>
+                                
+                                <div class="flex gap-2">
+                                    <span class="px-4 py-2 bg-slate-700 text-slate-300 font-semibold rounded-lg text-xs sm:text-sm inline-flex items-center gap-1.5 cursor-not-allowed opacity-70" aria-label="Case study details coming soon">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                        View Live
+                                   </span>
+									</a>
+                                    <span class="px-4 py-2 border border-purple-500/50 text-purple-300 font-semibold rounded-lg text-xs sm:text-sm cursor-not-allowed opacity-70" aria-label="Full case study details available upon request">
+                                        Case Study
+                                    </span>
+                                </div>
+                            </div>
 
-	<!-- Testimonials Section -->
-	<section id="testimonials" class="py-20 sm:py-32 px-4 bg-slate-900">
-		<div class="max-w-6xl mx-auto">
-			<div class="text-center mb-16 sm:mb-20 scroll-fade">
-			<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">What Our Clients Say</h2>
-			<p class="text-base sm:text-lg md:text-xl text-slate-400">Real feedback from our partners</p>
-			</div>
+                            <!-- Image -->
+                            <div class="relative overflow-hidden h-56 md:h-64 w-full bg-slate-900 md:order-1">
+                                <img src="img/proj2.png" alt="Rysen.ro E-Commerce Gaming Store - Case Study with €120K Year 1 revenue and 50+ vendors" loading="lazy" class="w-full h-full object-contain">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-			<div class="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-				<!-- Testimonial 1 -->
-				<div class="scroll-fade">
-					<div class="bg-slate-800 rounded-xl p-8 border border-slate-700 testimonial-card h-full">
-						<div class="flex items-center gap-1 mb-4">
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-						</div>
-						<p class="text-sm sm:text-base md:text-lg text-slate-300 mb-6 leading-relaxed">
-								"Built our e-commerce site and it's been a game-changer. Professional team, met all deadlines. We went from zero online sales to consistent revenue in the first 2 months. Highly recommend."
-							</p>
-							<div class="border-t border-slate-700 pt-4">
-								<p class="font-semibold text-white">Andrei M.</p>
-								<p class="text-slate-400 text-sm">E-Commerce Founder</p>
-						</div>
-					</div>
-				</div>
+                <!-- CTA Section -->
+                <div class="bg-gradient-to-r from-indigo-900/25 to-purple-900/25 backdrop-blur rounded-xl border border-indigo-500/20 px-6 sm:px-8 py-6 sm:py-7 text-center scroll-fade" style="animation-delay: 0.2s;">
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Gata să fii următoarea noastră poveste de succes?</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mb-4">Transformă-ți afacerea cu soluții digitale premium.</p>
+                    <a href="https://api.whatsapp.com/send/?phone=40771324731&text=Salutare%21+As+dori+sa+discutam+despre+un+proiect.&type=phone_number&app_absent=0" class="inline-flex items-center justify-center gap-1.5 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition text-sm min-h-12" aria-label="Discutează despre proiectul tău pe WhatsApp">
+                        Discută Proiectul Tău
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<!-- Testimonial 2 -->
-				<div class="scroll-fade" style="animation-delay: 0.1s;">
-					<div class="bg-slate-800 rounded-xl p-8 border border-slate-700 testimonial-card h-full">
-						<div class="flex items-center gap-1 mb-4">
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-						</div>
-						<p class="text-sm sm:text-base md:text-lg text-slate-300 mb-6 leading-relaxed">
-								"They built a web app that automated our entire client management process. Tasks that used to take hours now take minutes. Support team responds instantly to any issues."
-							</p>
-							<div class="border-t border-slate-700 pt-4">
-								<p class="font-semibold text-white">Diana P.</p>
-								<p class="text-slate-400 text-sm">Marketing Manager</p>
-						</div>
-					</div>
-				</div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 sm:py-32 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 sm:mb-20 scroll-fade">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">Povești de Succes ale Clienților</h2>
+                <p class="text-base sm:text-lg md:text-xl text-slate-400">Feedback-uri reale de la companii pe care le-am ajutat să crească</p>
+            </div>
 
-				<!-- Testimonial 3 -->
-				<div class="scroll-fade" style="animation-delay: 0.2s;">
-					<div class="bg-slate-800 rounded-xl p-8 border border-slate-700 testimonial-card h-full">
-						<div class="flex items-center gap-1 mb-4">
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-							<span class="text-indigo-400">★</span>
-						</div>
-						<p class="text-sm sm:text-base md:text-lg text-slate-300 mb-6 leading-relaxed">
-								"The new website is outstanding - both visually and in performance. They optimized it for SEO and now we get qualified leads from Google every single day. ROI has already paid for the investment."
-							</p>
-							<div class="border-t border-slate-700 pt-4">
-								<p class="font-semibold text-white">Călin V.</p>
-								<p class="text-slate-400 text-sm">CEO, Consulting Firm</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="scroll-fade">
+                    <div class="bg-slate-800/80 backdrop-blur rounded-2xl p-8 border border-slate-700/50 hover:border-indigo-500/30 transition duration-300 flex flex-col h-full">
+                        <div class="flex items-center gap-1 mb-4">
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                        </div>
+                        
+                        <p class="text-base text-slate-300 mb-6 leading-relaxed flex-grow">
+                            "Raised a transformat complet prezența noastră online. Nu au construit doar un website frumos – au construit o mașină de venituri. În primele 3 luni, deja ne-am recuperat investiția."
+                        </p>
+                        
+                        <div class="flex items-center gap-4 pt-6 border-t border-slate-700">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                                    AN
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Andrei M.</p>
+                                <p class="text-sm text-slate-400">Fondator E-Commerce</p>
+                                <p class="text-xs text-slate-500 mt-1">Rysen.ro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-	<!-- Process Section -->
-	<section id="process" class="py-20 sm:py-32 px-4">
-		<div class="max-w-6xl mx-auto">
-			<div class="text-center mb-16 sm:mb-20 scroll-fade">
-			<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">How We Work</h2>
-			<p class="text-base sm:text-lg md:text-xl text-slate-400">Simple process, transparent communication, guaranteed results</p>
-			</div>
+                <!-- Testimonial 2 -->
+                <div class="scroll-fade" style="animation-delay: 0.1s;">
+                    <div class="bg-slate-800/80 backdrop-blur rounded-2xl p-8 border border-slate-700/50 hover:border-purple-500/30 transition duration-300 flex flex-col h-full">
+                        <div class="flex items-center gap-1 mb-4">
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                        </div>
+                        
+                        <p class="text-base text-slate-300 mb-6 leading-relaxed flex-grow">
+                            "Am lucrat înainte cu alte agenții, dar Raised e diferit. Înțeleg afacerea, nu doar codul. Aplicația web personalizată pe care au construit-o a automatizat 40 ore de muncă manuală săptămânal."
+                        </p>
+                        
+                        <div class="flex items-center gap-4 pt-6 border-t border-slate-700">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold">
+                                    DP
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Diana P.</p>
+                                <p class="text-sm text-slate-400">Manager Operații</p>
+                                <p class="text-xs text-slate-500 mt-1">Companie Logistică</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-			<div class="grid md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 md:gap-4">
-				<!-- Step 1 -->
-				<div class="scroll-fade">
-					<div class="flex flex-col items-center">
-						<div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
-									<span class="text-lg sm:text-2xl font-bold text-white">1</span>
-						</div>
-					<h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Discovery</h3>
-					<p class="text-sm text-slate-400 text-center">We talk with you. What's the goal? Who are your customers? What matters most?</p>
-					</div>
-				</div>
+                <!-- Testimonial 3 -->
+                <div class="scroll-fade" style="animation-delay: 0.2s;">
+                    <div class="bg-slate-800/80 backdrop-blur rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-500/30 transition duration-300 flex flex-col h-full">
+                        <div class="flex items-center gap-1 mb-4">
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                            <span class="text-amber-400">★</span>
+                        </div>
+                        
+                        <p class="text-base text-slate-300 mb-6 leading-relaxed flex-grow">
+                            "ROI a fost imediat. Primim lead-uri calificate de la Google zilnic. Site-ul convertește la 4.2% – dublu media industriei. Această echipă cu siguranță știe ce face."
+                        </p>
+                        
+                        <div class="flex items-center gap-4 pt-6 border-t border-slate-700">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold">
+                                    CV
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Călin V.</p>
+                                <p class="text-sm text-slate-400">CEO</p>
+                                <p class="text-xs text-slate-500 mt-1">Consulturi Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<!-- Step 2 -->
-				<div class="scroll-fade" style="animation-delay: 0.1s;">
-					<div class="flex flex-col items-center">
-						<div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
-									<span class="text-lg sm:text-2xl font-bold text-white">2</span>
-						</div>
-					<h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Design & Planning</h3>
-					<p class="text-sm text-slate-400 text-center">We create detailed plans and mockups. You approve the design, then we build it.</p>
-					</div>
-				</div>
 
-				<!-- Step 3 -->
-				<div class="scroll-fade" style="animation-delay: 0.2s;">
-					<div class="flex flex-col items-center">
-						<div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
-									<span class="text-lg sm:text-2xl font-bold text-white">3</span>
-						</div>
-					<h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Development</h3>
-					<p class="text-sm text-slate-400 text-center">We build your site/app. Regular updates, you see progress every week.</p>
-					</div>
-				</div>
+            </div>
 
-				<!-- Step 4 -->
-				<div class="scroll-fade" style="animation-delay: 0.3s;">
-					<div class="flex flex-col items-center">
-						<div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
-									<span class="text-lg sm:text-2xl font-bold text-white">4</span>
-						</div>
-					<h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Launch & Support</h3>
-					<p class="text-sm text-slate-400 text-center">Go live! Final testing, optimization, and ongoing support after launch.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+            <!-- Social Proof -->
+            <div class="mt-16 sm:mt-20 pt-16 sm:pt-20 border-t border-slate-700 text-center scroll-fade">
+                <p class="text-slate-400 mb-6">De încredere pentru companii din diverse industrii</p>
+                <div class="flex flex-wrap justify-center gap-8 items-center opacity-50">
+                    <span class="text-slate-400 font-semibold">E-Commerce</span>
+                    <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                    <span class="text-slate-400 font-semibold">Tehnologie</span>
+                    <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                    <span class="text-slate-400 font-semibold">Servicii</span>
+                    <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                    <span class="text-slate-400 font-semibold">Startup-uri</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Why Us Section -->
-	<section id="why-us" class="py-20 sm:py-32 px-4 bg-slate-900">
-		<div class="max-w-6xl mx-auto">
-			<div class="text-center mb-16 sm:mb-20 scroll-fade">
-			<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">Why Choose Raised</h2>
-			<p class="text-base sm:text-lg md:text-xl text-slate-400">We don't just code. We think about your business, conversions, and growth</p>
-			</div>
+    <!-- Process Section -->
+    <section id="process" class="py-20 sm:py-32 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 sm:mb-20 scroll-fade">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">Cum Lucrăm</h2>
+            <p class="text-base sm:text-lg md:text-xl text-slate-400">Proces simplu, comunicare transparentă, rezultate garantate</p>
+            </div>
 
-			<div class="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
-				<!-- Reason 1 -->
-				<div class="scroll-fade">
-					<div class="flex gap-4">
-						<div class="flex-shrink-0">
-							<div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-600">
-								<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-								</svg>
-							</div>
-						</div>
-						<div>
-						<h3 class="text-lg font-bold text-white mb-2">Real Speed</h3>
-						<p class="text-sm sm:text-base text-slate-400">Websites live in 6-12 weeks. No surprise delays or complications. Agile process, weekly updates.</p>
-						</div>
-					</div>
-				</div>
+            <div class="grid md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 md:gap-4">
+                <!-- Step 1 -->
+                <div class="scroll-fade">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
+                                    <span class="text-lg sm:text-2xl font-bold text-white" aria-label="Step 1">1</span>
+                        </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Descoperire</h3>
+                    <p class="text-sm text-slate-400 text-center">Vorbim cu tine. Care-i obiectivul? Cine sunt clienții tăi? Ce contează cel mai mult?</p>
+                    </div>
+                </div>
 
-				<!-- Reason 2 -->
-				<div class="scroll-fade" style="animation-delay: 0.1s;">
-					<div class="flex gap-4">
-						<div class="flex-shrink-0">
-							<div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600">
-								<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-							</div>
-						</div>
-						<div>
-						<h3 class="text-lg font-bold text-white mb-2">Real Results</h3>
-						<p class="text-sm sm:text-base text-slate-400">Our clients get leads, sales, and traffic. We don't build beautiful sites that don't convert. Every decision is for ROI.</p>
-						</div>
-					</div>
-				</div>
+                <!-- Step 2 -->
+                <div class="scroll-fade" style="animation-delay: 0.1s;">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
+                                    <span class="text-lg sm:text-2xl font-bold text-white" aria-label="Step 2">2</span>
+                        </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Design & Planificare</h3>
+                    <p class="text-sm text-slate-400 text-center">Creăm planuri și mockup-uri detaliate. Tu aproba designul, apoi noi construim.</p>
+                    </div>
+                </div>
 
-				<!-- Reason 3 -->
-				<div class="scroll-fade" style="animation-delay: 0.2s;">
-					<div class="flex gap-4">
-						<div class="flex-shrink-0">
-							<div class="flex items-center justify-center h-12 w-12 rounded-md bg-cyan-600">
-								<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-								</svg>
-							</div>
-						</div>
-						<div>
-						<h3 class="text-lg font-bold text-white mb-2">Built for Scale</h3>
-						<p class="text-sm sm:text-base text-slate-400">Modern tech, solid architecture. Your site performs fast with 1K, 10K, or 100K visitors. We think long-term.</p>
-						</div>
-					</div>
-				</div>
+                <!-- Step 3 -->
+                <div class="scroll-fade" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
+                                    <span class="text-lg sm:text-2xl font-bold text-white" aria-label="Step 3">3</span>
+                        </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Dezvoltare</h3>
+                    <p class="text-sm text-slate-400 text-center">Construim site-ul/app ta. Actualizări regulate, vezi progres săptămânal.</p>
+                    </div>
+                </div>
 
-				<!-- Reason 4 -->
-				<div class="scroll-fade" style="animation-delay: 0.3s;">
-					<div class="flex gap-4">
-						<div class="flex-shrink-0">
-							<div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-600">
-								<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
-								</svg>
-							</div>
-						</div>
-						<div>
-						<h3 class="text-lg font-bold text-white mb-2">Real Support</h3>
-						<p class="text-sm sm:text-base text-slate-400">It doesn't end at launch. Automated backups, updates, 24/7 monitoring, fast responses. You focus on business, we handle tech.</p>
-						</div>
-					</div>
-				</div>
+                <!-- Step 4 -->
+                <div class="scroll-fade" style="animation-delay: 0.3s;">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mb-6 border-4 border-slate-900 relative z-10">
+                                    <span class="text-lg sm:text-2xl font-bold text-white" aria-label="Step 4">4</span>
+                        </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 text-center">Lansare & Suport</h3>
+                    <p class="text-sm text-slate-400 text-center">Treci în producție! Testare finală, optimizare și suport continuu după lansare.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<!-- Reason 5 -->
-				<div class="scroll-fade" style="animation-delay: 0.4s;">
-					<div class="flex gap-4">
-						<div class="flex-shrink-0">
-							<div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600">
-								<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-							</div>
-						</div>
-						<div>
-						<h3 class="text-lg font-bold text-white mb-2">100% Transparency</h3>
-						<p class="text-sm sm:text-base text-slate-400">No surprises. You know costs, timeline, and scope from day one. Clear communication throughout the project.</p>
-						</div>
-					</div>
-				</div>
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-20 sm:py-32 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 sm:mb-20 scroll-fade">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">De Ce Alege Raised</h2>
+            <p class="text-base sm:text-lg md:text-xl text-slate-400">Nu doar codificăm. Gândim la afacerea ta, conversii și creștere</p>
+            </div>
 
-				<!-- Reason 6 -->
-				<div class="scroll-fade" style="animation-delay: 0.5s;">
-					<div class="flex gap-4">
-						<div class="flex-shrink-0">
-							<div class="flex items-center justify-center h-12 w-12 rounded-md bg-cyan-600">
-								<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-								</svg>
-							</div>
-						</div>
-						<div>
-						<h3 class="text-lg font-bold text-white mb-2">Fair Pricing</h3>
-						<p class="text-sm sm:text-base text-slate-400">We're not the cheapest, nor the most expensive. Fair price for premium quality. You get exactly what you pay for.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+                <!-- Reason 1 -->
+                <div class="scroll-fade">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Viteză Reală</h3>
+                        <p class="text-sm sm:text-base text-slate-400">Website-uri lansate în 6-12 săptămâni. Fără întârzieri sau complicații surprize. Proces agile, actualizări săptămânale.</p>
+                        </div>
+                    </div>
+                </div>
 
-	<!-- Final CTA Section -->
-	<section class="py-16 sm:py-24 px-4">
-		<div class="max-w-4xl mx-auto text-center scroll-fade">
-			<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Ready to Start?</h2>
-			<p class="text-base sm:text-lg md:text-xl text-slate-400 mb-8 sm:mb-12 leading-relaxed">
-				Let's talk about your project. Free consultation, no obligation. Want a concrete proposal? Get it after you hear exactly what we'll deliver.
-			</p>
-			</p>
-			
-			<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-				<a href="https://api.whatsapp.com/send/?phone=40771324731&text=Hi%21+I%27d+like+to+book+a+free+consultation.&type=phone_number&app_absent=0" class="px-6 sm:px-10 py-3 sm:py-4 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition transform hover:scale-105 text-center text-sm sm:text-base">
-					Schedule Free Consultation
-				</a>
-				<a href="mailto:hello@raised.ro" class="px-6 sm:px-10 py-3 sm:py-4 border-2 border-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-950 transition text-center text-sm sm:text-base">
-					Email: hello@raised.ro
-				</a>
-			</div>
+                <!-- Reason 2 -->
+                <div class="scroll-fade" style="animation-delay: 0.1s;">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600">
+                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Rezultate Reale</h3>
+                        <p class="text-sm sm:text-base text-slate-400">Clienții noștri obțin lead-uri, vânzări și trafic. Nu construim site-uri frumoase care nu convertesc. Fiecare decizie e pentru ROI.</p>
+                        </div>
+                    </div>
+                </div>
 
-			<p class="text-slate-500 mt-6 sm:mt-8 text-xs sm:text-sm">
-				We respond in under 24 hours • No spam • Serious conversations only
-			</p>
-		</div>
-	</section>
+                <!-- Reason 3 -->
+                <div class="scroll-fade" style="animation-delay: 0.2s;">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-cyan-600">
+                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Construit pentru Scală</h3>
+                        <p class="text-sm sm:text-base text-slate-400">Tehnologie modernă, arhitectură solidă. Site-ul tău performează rapid cu 1K, 10K sau 100K vizitatori. Gândim pe termen lung.</p>
+                        </div>
+                    </div>
+                </div>
 
-	<!-- Footer -->
-	<footer class="bg-slate-900 border-t border-slate-800 py-6 sm:py-8 px-4">
-		<div class="max-w-7xl mx-auto">
-			<!-- Top Footer - Compact Horizontal -->
-			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 mb-4 sm:mb-6">
-				<!-- Logo -->
-				<div class="flex items-center gap-2">
-					<div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center">
-						<span class="text-white font-bold text-sm">R</span>
-					</div>
-					<span class="font-bold text-white text-sm">Raised</span>
-				</div>
+                <!-- Reason 4 -->
+                <div class="scroll-fade" style="animation-delay: 0.3s;">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Suport Adevărat</h3>
+                        <p class="text-sm sm:text-base text-slate-400">Nu se termină la lansare. Backup-uri automatice, actualizări, monitorizare 24/7, răspunsuri rapide. Tu te focusezi pe afacere, noi gestionez tech.</p>
+                        </div>
+                    </div>
+                </div>
 
-				<!-- Links - Horizontal -->
-				<div class="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm">
-					<a href="#home" class="text-slate-400 hover:text-white transition">Home</a>
-					<a href="#services" class="text-slate-400 hover:text-white transition">Services</a>
-					<a href="#work" class="text-slate-400 hover:text-white transition">Projects</a>
-					<a href="#testimonials" class="text-slate-400 hover:text-white transition">Clients</a>
-					<a href="mailto:hello@raised.ro" class="text-slate-400 hover:text-white transition">Email</a>
-					<a href="tel:+40771324731" class="text-slate-400 hover:text-white transition">Call</a>
-				</div>
+                <!-- Reason 5 -->
+                <div class="scroll-fade" style="animation-delay: 0.4s;">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600">
+                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                        <h3 class="text-lg font-bold text-white mb-2">100% Transparență</h3>
+                        <p class="text-sm sm:text-base text-slate-400">Fără surprize. Știi costuri, timeline și scope de la prima zi. Comunicare clară pe tot parcursul proiectului.</p>
+                        </div>
+                    </div>
+                </div>
 
-				<!-- Social - Horizontal -->
-				<div class="flex gap-4 text-xs sm:text-sm">
-					<a href="https://instagram.com/raisedro" class="text-slate-400 hover:text-white transition">Instagram</a>
-					<a href="https://linkedin.com" class="text-slate-400 hover:text-white transition">LinkedIn</a>
-				</div>
-			</div>
+                <!-- Reason 6 -->
+                <div class="scroll-fade" style="animation-delay: 0.5s;">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-cyan-600">
+                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Preț</h3>
+                        <p class="text-sm sm:text-base text-slate-400">Nu suntem cei mai ieftini, nici cei mai scumpi. Prețpentru calitate premium. Obții exact pentru ce plătești.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Bottom Footer -->
-			<div class="border-t border-slate-800 pt-4 sm:pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs sm:text-sm">
-				<p class="text-slate-500">© 2024 Raised. All rights reserved.</p>
-				<div class="flex gap-4 sm:gap-6">
-					<a href="#" class="text-slate-500 hover:text-white transition">Privacy</a>
-					<a href="#" class="text-slate-500 hover:text-white transition">Terms</a>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <!-- Mid-Page CTA Section -->
+    <section class="py-20 sm:py-28 px-4 bg-gradient-to-r from-indigo-900/50 via-purple-900/50 to-cyan-900/50 backdrop-blur-sm border-y border-indigo-500/20">
+        <div class="max-w-4xl mx-auto text-center scroll-fade">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+                Programează o discuție
+            </h2>
+            <p class="text-base sm:text-lg text-slate-300 mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
+                Consultația noastră gratuită e 30 de minute de strategie concentrată. Vom discuta obiectivele tale, competitori și exact ce trebuie să se întâmple ca website-ul tău să genereze venituri reale. Fără presiune. Doar sfaturi sincere.
+            </p>
+            
+            <div class="grid sm:grid-cols-3 gap-6 mb-10 text-left">
+                <div class="bg-slate-800/50 backdrop-blur rounded-lg p-4 border border-slate-700/50">
+                    <p class="text-indigo-400 font-semibold text-sm mb-1">✓ Fără obligație</p>
+                    <p class="text-slate-300 text-xs">Fără agende ascunse sau pitch de vânzare</p>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur rounded-lg p-4 border border-slate-700/50">
+                    <p class="text-purple-400 font-semibold text-sm mb-1">✓ Recomandări concrete</p>
+                    <p class="text-slate-300 text-xs">Sfaturi pe care le poți folosi</p>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur rounded-lg p-4 border border-slate-700/50">
+                    <p class="text-cyan-400 font-semibold text-sm mb-1">✓ Propunere personalizată</p>
+                    <p class="text-slate-300 text-xs">Obții un plan detaliat după ce vorbim</p>
+                </div>
+            </div>
+            
+            <a href="https://api.whatsapp.com/send/?phone=40771324731&text=Salutare%21+Doresc+sa+programez+o+consultatie+gratuita+de+30+de+minute.&type=phone_number&app_absent=0" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 sm:py-5 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-bold rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition transform hover:scale-105 shadow-lg hover:shadow-xl mb-4 w-full sm:w-auto" aria-label="Programează consultația ta gratuită de 30 de minute">
+                Programează Consultația Gratuită de 30 Min
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+            
+            <p class="text-slate-400 text-xs sm:text-sm">
+                De obicei complet rezervat 2-3 săptămâni în avans
+            </p>
+        </div>
+    </section>
 
-	<!-- JavaScript -->
-	<script>
-		// Mobile Menu Toggle
-		const mobileMenuButton = document.getElementById('mobile-menu-button');
-		const mobileMenu = document.getElementById('mobile-menu');
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 sm:py-32 px-4 bg-slate-900">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 sm:mb-20 scroll-fade">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">Întrebări Frecvente</h2>
+                <p class="text-base sm:text-lg md:text-xl text-slate-400">Tot ce trebuie să știi despre lucrul cu Raised</p>
+            </div>
 
-		function toggleMobileMenu() {
-			mobileMenu.classList.toggle('hidden');
-		}
+            <div class="space-y-4 sm:space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="scroll-fade">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Cât costă un website?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-indigo-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            Proiectele de website încep de la €150–€300. Magazinele e-commerce încep de la €250–€600. Soluțiile personalizate se prețuiesc individual în funcție de cerințe. Contactează-ne pentru o consultație gratuită și o ofertă personalizată.
+                        </p>
+                    </details>
+                </div>
 
-		mobileMenuButton.addEventListener('click', toggleMobileMenu);
+                <!-- FAQ Item 2 -->
+                <div class="scroll-fade" style="animation-delay: 0.05s;">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-purple-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Cât durează un proiect?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            Majoritatea website-urilor sunt finalizate în 1–2 săptămâni, în timp ce proiectele e-commerce mai mari durează de obicei 2–4 săptămâni. Păstrăm comunicarea simplă, oferim actualizări regulate și asigurăm o lansare ușoară pe tot parcursul.
 
-		// Close mobile menu when link is clicked
-		const mobileLinks = mobileMenu.querySelectorAll('a');
-		mobileLinks.forEach(link => {
-			link.addEventListener('click', toggleMobileMenu);
-		});
+                        </p>
+                    </details>
+                </div>
 
-		// Scroll Animations
-		const observerOptions = {
-			threshold: 0.1,
-			rootMargin: '0px 0px -50px 0px'
-		};
+                <!-- FAQ Item 3 -->
+                <div class="scroll-fade" style="animation-delay: 0.1s;">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-cyan-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Oferiți hosting și domeniu?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-cyan-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            Da. Configurăm totul: înregistrare domeniu, hosting, certificate SSL și întreținere continuă. Cei mai mulți clienți aleg pachetul de hosting gestionat (€29-€99/lună) care include backup-uri automatice, actualizări de securitate, monitorizare performance și suport 24/7.
+                        </p>
+                    </details>
+                </div>
 
-		const observer = new IntersectionObserver(function(entries) {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('visible');
-				}
-			});
-		}, observerOptions);
+                <!-- FAQ Item 4 -->
+                <div class="scroll-fade" style="animation-delay: 0.15s;">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Oferiți suport după lansare?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-indigo-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            Absolut. Includem 1 lună de suport gratuit după lansare. După aceea, puteți alege planurile de suport continuu: Basic (€49/lună) pentru actualizări minore și probleme, sau Premium (€199/lună) pentru schimbări nelimitate și suport dedicat. Toți clienții beneficiază de suport de urgență 24/7.
+                        </p>
+                    </details>
+                </div>
 
-		// Observe all scroll-fade elements
-		document.querySelectorAll('.scroll-fade').forEach(el => {
-			observer.observe(el);
-		});
+                <!-- FAQ Item 5 -->
+                <div class="scroll-fade" style="animation-delay: 0.2s;">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-purple-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Construiți magazine Shopify?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            Da. Suntem experți Shopify. Construim magazine personalizate cu caracteristici avansate: recomandări produse, fluxuri email automate, suport multi-vendor, analize avansate și optimizare conversii. Gestionez și integrarea app-urilor, personalizare teme și optimizare continuă.
+                        </p>
+                    </details>
+                </div>
 
-		// Smooth scroll for anchor links
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				const href = this.getAttribute('href');
-				if (href !== '#') {
-					e.preventDefault();
-					const target = document.querySelector(href);
-					if (target) {
-						setTimeout(() => {
-							target.scrollIntoView({ behavior: 'smooth' });
-						}, 100);
-					}
-				}
-			});
-		});
-	</script>
+                <!-- FAQ Item 6 -->
+                <div class="scroll-fade" style="animation-delay: 0.25s;">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-cyan-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Puteți reproiecta website-uri existente?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-cyan-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            Absolut. Reproiectăm frecvent website-uri existente pentru a îmbunătăți performanța, rate de conversie și experiența utilizatorului. Analizez site-ul curent, identificm oportunități și îl reconstruim cu design și tehnologie modernă. Majoritatea reproiectărilor durează 6-10 săptămâni și încep de la €4.000.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="scroll-fade" style="animation-delay: 0.3s;">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Lucrați la nivel internațional?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-indigo-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            Da. Lucrăm cu clienți la nivel global. Echipa noastră operează în zone orare europene. Comunicăm prin email, Slack și Zoom. Fiind remote, putem lucra cu companii oriunde – am lucrat cu clienți din SUA, Marea Britanie, Germania, Franța și dincolo.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="scroll-fade" style="animation-delay: 0.35s;">
+                    <details class="group bg-slate-800/80 backdrop-blur rounded-xl border border-slate-700/50 hover:border-purple-500/30 transition duration-300">
+                        <summary class="flex items-center justify-between p-6 sm:p-8 cursor-pointer select-none">
+                            <h3 class="text-base sm:text-lg font-bold text-white pr-4">Cum funcționează procesul vostru?</h3>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-400 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </summary>
+                        <p class="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-300 leading-relaxed border-t border-slate-700/50">
+                            <strong class="text-white">Pasul 1 (Descoperire):</strong> Înțelegem afacerea, obiectivele și audiența ta. <br>
+                            <strong class="text-white">Pasul 2 (Design):</strong> Creez mockup-uri și wireframe-uri detaliate pentru aprobare. <br>
+                            <strong class="text-white">Pasul 3 (Dezvoltare):</strong> Construim site-ul/app-ul cu actualizări săptămânale. <br>
+                            <strong class="text-white">Pasul 4 (Lansare):</strong> Testare finală, deployment și training. Transparență și comunicare completă pe tot parcursul.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mt-16 sm:mt-20 text-center scroll-fade">
+                <p class="text-slate-400 mb-6">Mai ai întrebări? Suntem aici să ajutăm.</p>
+                <a href="https://api.whatsapp.com/send/?phone=40771324731&text=Salutare%21+Am+o+intrebare+despre+serviciile+voastre.&type=phone_number&app_absent=0" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition transform hover:scale-105 min-h-12 w-full sm:w-auto" aria-label="Întreabă-ne pe WhatsApp">
+                    Contactează-ne pe WhatsApp
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800">
+        <!-- Main Footer Content -->
+         <div>
+    <a style="margin: 0;line-height: 1;padding: 0;text-decoration: none;" href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
+        <img style="display:inline-block;border:0;width:250px;margin:5px;" src="https://etamade-com.github.io/anpc-sal-sol-logo/anpc-sal.svg" alt="Solutionarea Alternativa a Litigiilor">
+    </a>
+    <a style="margin: 0;line-height: 1;padding: 0;text-decoration: none;" href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow">
+        <img style="display:inline-block;border:0;width:250px;margin:5px;" src="https://etamade-com.github.io/anpc-sal-sol-logo/anpc-sol.svg" alt="Solutionarea Online a Litigiilor">
+    </a>
+</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-white font-bold text-xs">R</span>
+                        </div>
+                        <span class="text-base sm:text-lg font-bold text-white">Raised</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 mb-4 leading-relaxed">
+                        Agenție digitală premium.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://instagram.com/raisedro" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-indigo-400 transition" aria-label="Follow Raised on Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.015-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-indigo-400 transition" aria-label="Connect with Raised on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs sm:text-sm">Servicii</h4>
+                    <ul class="space-y-1.5 text-xs">
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition">Web Design</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition">E-Commerce</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition">Web Apps</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition">SEO</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition">UI/UX</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs sm:text-sm">Companie</h4>
+                    <ul class="space-y-1.5 text-xs">
+                        <li><a href="#home" class="text-slate-400 hover:text-white transition">Acasă</a></li>
+                        <li><a href="#about" class="text-slate-400 hover:text-white transition">Despre Noi</a></li>
+                        <li><a href="#work" class="text-slate-400 hover:text-white transition">Portofoliu</a></li>
+                        <li><a href="#testimonials" class="text-slate-400 hover:text-white transition">Testimoniale</a></li>
+                        <li><a href="#faq" class="text-slate-400 hover:text-white transition">Întrebări Frecvente</a></li>
+                        <li><a href="#process" class="text-slate-400 hover:text-white transition">Proces</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs sm:text-sm">Contact</h4>
+                    <div class="space-y-2 text-xs">
+                        <div>
+                            <p class="text-slate-500 font-semibold text-xs mb-0.5">EMAIL</p>
+                            <a href="mailto:hello@raised.ro" class="text-slate-300 hover:text-white transition">
+                                hello@raised.ro
+                            </a>
+                        </div>
+                        <div>
+                            <p class="text-slate-500 font-semibold text-xs mb-0.5">TELEFON</p>
+                            <a href="tel:+40771324731" class="text-slate-300 hover:text-white transition">
+                                +40 771 324 731
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-slate-800 pt-4 sm:pt-6 mb-4 sm:mb-6"></div>
+            <!-- Bottom Footer -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 text-xs">
+                <!-- Copyright -->
+                <p class="text-slate-500 text-xs order-2 sm:order-1">
+                    © 2026 Raised. Toate drepturile rezervate.
+                </p>
+
+                <!-- Legal Links -->
+                <div class="flex flex-wrap gap-3 sm:gap-4 order-1 sm:order-2">
+                    <a href="#" class="text-slate-500 hover:text-white transition text-xs">Confidențialitate</a>
+                    <a href="#" class="text-slate-500 hover:text-white transition text-xs">Condiții</a>
+                    <a href="#" class="text-slate-500 hover:text-white transition text-xs">Cookies</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Badges Bar -->
+        <div class="border-t border-slate-800 bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-4 text-center">
+                    <div class="py-0.5">
+                        <p class="text-xs text-slate-500 font-semibold leading-none mb-0">SECURITATE</p>
+                        <p class="text-xs text-slate-300 leading-tight">SSL</p>
+                    </div>
+                    <div class="py-0.5">
+                        <p class="text-xs text-slate-500 font-semibold leading-none mb-0">DISPONIBILITATE</p>
+                        <p class="text-xs text-slate-300 leading-tight">99.9%</p>
+                    </div>
+                    <div class="py-0.5">
+                        <p class="text-xs text-slate-500 font-semibold leading-none mb-0">SUPORT</p>
+                        <p class="text-xs text-slate-300 leading-tight">24/7</p>
+                    </div>
+                    <div class="py-0.5">
+                        <p class="text-xs text-slate-500 font-semibold leading-none mb-0">BACKUP-URI</p>
+                        <p class="text-xs text-slate-300 leading-tight">Zilnic</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-fade elements
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
